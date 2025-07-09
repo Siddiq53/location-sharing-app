@@ -25,11 +25,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let marker={}
-
+let firstLoad = true;
 socket.on("receive-location",(data)=>{
         console.log("New location:", data);
     const {id,latitude,longitude}=data;
-    map.setView([latitude,longitude],16);
+    if (firstLoad) {
+    map.setView([latitude, longitude], 16);
+    firstLoad = false;
+    }
+
     if(marker[id])
     {
         marker[id].setLatLng([latitude,longitude])
