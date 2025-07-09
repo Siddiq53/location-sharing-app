@@ -1,5 +1,5 @@
 # Location Sharing App
-
+Users can see each other's live locations on a map in real-time using browser geolocation and Leaflet.js.
 A real-time location sharing web app using:
 - Express.js
 - EJS Templates
